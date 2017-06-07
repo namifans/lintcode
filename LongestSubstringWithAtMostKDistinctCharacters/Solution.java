@@ -8,23 +8,23 @@ public class Solution {
     	int hash[] = new int[256];
     	int len = s.length();
     	int result = 0, j = 0, count = 0;
-    	for (int i = 0; i < len; i ++) {
+    	for (int i = 0; i < len; i++) {
     		while (j < len) {
 				if (hash[(int) s.charAt(j)] > 0) {
-					hash[(int) s.charAt(j ++)] ++;
+					hash[(int) s.charAt(j++)] ++;
 				} else {
 					if (count == k) {
 						break;
 					} else {
-						hash[(int) s.charAt(j ++)] ++;
+						hash[(int) s.charAt(j++)] ++;
 						count ++;
 					}
 				}
     		}
 			result = Math.max(result, j - i);
-    		hash[(int) s.charAt(i)] --;
+    		hash[(int) s.charAt(i)]--;
     		if (hash[(int) s.charAt(i)] == 0) {
-    			count --;
+    			count--;
     		}
     	}
     	return result;

@@ -6,7 +6,7 @@ public class Solution {
      */
     public int minimumSize(int[] nums, int s) {
         int result = Integer.MAX_VALUE, sum = 0, j = 0;
-        for (int i = 0; i < nums.length; i ++) {
+        for (int i = 0; i < nums.length; i++) {
         	while (j < nums.length) {
         		if (sum + nums[j] >= s) {
         			result = Math.min(j - i + 1, result);
