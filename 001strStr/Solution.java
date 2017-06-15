@@ -6,6 +6,8 @@ class Solution {
      * @param target string containing the sequence of characters to match.
      */
     public int strStr(String source, String target) {
+        if (source == null || target == null)
+            return -1;
     	for (int i = 0; ; i++) {
     		for (int j = 0; ; j++) {
     			if (j == target.length())
