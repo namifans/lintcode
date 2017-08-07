@@ -18,8 +18,9 @@ public class Solution {
                 }
             }
             dp[i] = ans;
-            System.out.println("i " + i + " dp " + dp[i]);
         }
-        return dp[amount] != Integer.MAX_VALUE ? dp[amount] : -1;
+        if (dp[amount] == Integer.MAX_VALUE)
+            dp[amount] = -1;
+        return dp[amount];
     }
 }
