@@ -23,27 +23,14 @@ public class Solution {
         final Point o = origin;
         Queue<Point> queue = new PriorityQueue<>(k, new Comparator<Point>() {
             public int compare(Point a, Point b) {
-                double distA = Math.sqrt(Math.pow(a.x - o.x, 2) + Math.pow(a.y - o.y, 2));
-                double distB = Math.sqrt(Math.pow(b.x - o.x, 2) + Math.pow(b.y - o.y, 2));
-                if (distA < distB) {
-                    return -1;
-                } else if (distA > distB) {
-                    return 1;
-                } else {
-                    if (a.x < b.x) {
-                        return -1;
-                    } else if (a.x > b.x) {
-                        return 1;
-                    } else {
-                        if (a.y < b.y) {
-                            return -1;
-                        } else if (a.y > b.y) {
-                            return 1;
-                        } else {
-                            return 0;
-                        }
-                    }
-                }
+                int distA = (a.x - o.x) * (a.x - o.x) + (a.y - o.y) * (a.y - o.y);
+                int distB = (b.x - o.x) * (b.x - o.x) + (b.y - o.y) * (b.y - o.y);
+                int diff = distA - distB;
+                if (diff == 0) 
+                    diff = a.x - b.x;
+                if (diff == 0)
+                    diff = a.y - b.y;
+                return diff;
             }
         });
         for (Point p : points) {
