@@ -6,8 +6,6 @@ public class Solution {
      */
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        // if (nums == null || nums.length == 0)
-        //     return result;
         List<Integer> current = new ArrayList<>();
         Arrays.sort(nums);
         findSubsets(nums, 0, result, current);
