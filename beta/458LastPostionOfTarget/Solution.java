@@ -16,7 +16,7 @@ public class Solution {
                 right = mid - 1;
             }
         }
-        if (right > 0 && nums[right] == target)
+        if (right >= 0 && nums[right] == target)
             return right;
         if (left < nums.length && nums[left] == target) 
             return left;
