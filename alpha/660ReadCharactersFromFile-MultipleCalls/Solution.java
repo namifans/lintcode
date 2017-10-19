@@ -2,13 +2,14 @@
       int read4(char[] buf); */
 
 public class Solution extends Reader4 {
+
+    char[] buffer = new char[4];
+
     /**
      * @param buf destination buffer
      * @param n maximum number of characters to read
      * @return the number of characters read
      */
-    char[] buffer = new char[4];
-
     public int read(char[] buf, int n) {
         int total = 0;
         char[] tmp = new char[4];
